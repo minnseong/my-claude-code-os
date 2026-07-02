@@ -46,16 +46,16 @@ JUnit 5 + AssertJ + Mockito
 작업 시작 전 항상 확인한다:
 ```bash
 # 1. 앱 정책 확인 (필수 — 정책과 어긋난 구현은 하지 않는다)
-cat habit-tracker/docs/planning/POLICY.md
+cat {정책_문서}
 
 # 2. 디자인 명세 확인
-cat habit-tracker/docs/design/specs/$(ls habit-tracker/docs/design/specs/ 2>/dev/null | tail -1) 2>/dev/null
+cat {문서_루트}/design/specs/$(ls {문서_루트}/design/specs/ 2>/dev/null | tail -1) 2>/dev/null
 
 # 3. 기존 도메인 모델 확인
-find habit-tracker/src/main/java -name "*.java" | head -20
+find {소스_루트} -name "*.java" | head -20
 
 # 4. 현재 API 계약서 확인
-cat habit-tracker/docs/api/endpoints.md 2>/dev/null
+cat {문서_루트}/api/endpoints.md 2>/dev/null
 ```
 
 ## 테스트 작성 규칙
@@ -81,7 +81,7 @@ class [ServiceName]Test {
 
 1. `src/main/java/com/habit/tracker/` 하위 구현 파일들
 2. `src/test/java/com/habit/tracker/` 하위 테스트 파일들
-3. `habit-tracker/docs/api/endpoints.md` 업데이트
+3. `{문서_루트}/api/endpoints.md` 업데이트
 
 ## 작업 완료 후 커밋
 

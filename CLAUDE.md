@@ -29,6 +29,24 @@ my-claude-code-os/
 
 ---
 
+## 현재 프로젝트 설정
+
+> **에이전트·스킬이 `{변수명}` 형태로 경로를 참조한다. 새 앱을 만들 때는 이 섹션만 수정한다.**
+
+| 변수 | 현재 값 |
+|------|--------|
+| `{앱_루트}` | `habit-tracker` |
+| `{정책_문서}` | `habit-tracker/docs/planning/POLICY.md` |
+| `{소스_루트}` | `habit-tracker/src/main/java` |
+| `{리소스_루트}` | `habit-tracker/src/main/resources` |
+| `{문서_루트}` | `habit-tracker/docs` |
+| `{기술_스택}` | `Java 17 / Spring Boot 3.2 / H2 / Thymeleaf / Gradle` |
+| `{테스트_스택}` | `JUnit 5 / AssertJ / Mockito` |
+| `{PR_대상_레포}` | `next-step/my-claude-code-os` |
+| `{PR_대상_브랜치}` | `minnseong` |
+
+---
+
 ## 에이전트 (`.claude/agents/`)
 
 | 에이전트 | 역할 | 주요 도구 |

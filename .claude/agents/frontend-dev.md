@@ -41,22 +41,22 @@ Vanilla JS (최소 사용)
 
 ```bash
 # 1. 앱 정책 확인 (필수 — 정책과 어긋난 UI는 구현하지 않는다)
-cat habit-tracker/docs/planning/POLICY.md
+cat {정책_문서}
 
 # 2. 디자인 명세 확인
-cat habit-tracker/docs/design/specs/[기능명].md
+cat {문서_루트}/design/specs/[기능명].md
 
 # 3. 디자인 시스템 확인
-cat habit-tracker/docs/design/design-system.md
+cat {문서_루트}/design/design-system.md
 
 # 4. API 계약서 확인 (모델 속성명)
-cat habit-tracker/docs/api/endpoints.md
+cat {문서_루트}/api/endpoints.md
 
 # 5. 기존 템플릿 구조 파악
-find habit-tracker/src/main/resources/templates -name "*.html"
+find {리소스_루트}/templates -name "*.html"
 
 # 6. 현재 CSS 확인
-cat habit-tracker/src/main/resources/static/css/style.css
+cat {리소스_루트}/static/css/style.css
 ```
 
 ## Thymeleaf 작성 규칙

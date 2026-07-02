@@ -24,13 +24,13 @@ description: |
 
 ```bash
 # 앱 정책 — 최우선 지침
-cat habit-tracker/docs/planning/POLICY.md 2>/dev/null
+cat {정책_문서} 2>/dev/null
 
 # 기존 도메인 모델
-find habit-tracker/src/main/java -name "*.java" 2>/dev/null | head -30
+find {소스_루트} -name "*.java" 2>/dev/null | head -30
 
 # API 계약서
-cat habit-tracker/docs/api/endpoints.md 2>/dev/null
+cat {문서_루트}/api/endpoints.md 2>/dev/null
 ```
 
 ---

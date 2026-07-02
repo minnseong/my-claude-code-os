@@ -35,18 +35,18 @@ tools:
 
 ```
 # 1. 기존 디자인 시스템 확인
-cat habit-tracker/docs/design/design-system.md
+cat {문서_루트}/design/design-system.md
 
 # 2. 기존 화면 명세서 목록 확인
-ls habit-tracker/docs/design/specs/ 2>/dev/null
+ls {문서_루트}/design/specs/ 2>/dev/null
 
 # 3. 현재 구현된 템플릿 파악 (참고용)
-find habit-tracker/src/main/resources/templates -name "*.html"
+find {리소스_루트}/templates -name "*.html"
 ```
 
 ## 화면 명세서 형식
 
-`habit-tracker/docs/design/specs/[기능명].md`에 저장:
+`{문서_루트}/design/specs/[기능명].md`에 저장:
 
 ```markdown
 # [기능명] 화면 명세
@@ -91,9 +91,9 @@ find habit-tracker/src/main/resources/templates -name "*.html"
 
 ```bash
 # 1. 내가 작성한 문서만 스테이징
-git add habit-tracker/docs/design/specs/[기능명].md
+git add {문서_루트}/design/specs/[기능명].md
 # 디자인 시스템도 수정했다면 함께 추가
-# git add habit-tracker/docs/design/design-system.md
+# git add {문서_루트}/design/design-system.md
 
 # 2. 확인
 git diff --cached --stat

@@ -90,12 +90,12 @@ Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
 | `.claude/settings.json` | `config` |
 | `CLAUDE.md` | `claude` |
 | `.gitignore` | `config` |
-| `habit-tracker/src/main/java/` | 변경된 도메인명 (예: `routine`, `check`) |
-| `habit-tracker/src/main/resources/templates/` | `ui` |
-| `habit-tracker/src/main/resources/static/` | `ui` |
-| `habit-tracker/src/test/` | `test` |
-| `habit-tracker/docs/` | `docs` |
-| `habit-tracker/build.gradle` | `build` |
+| `{소스_루트}/` | 변경된 도메인명 (예: `routine`, `check`) |
+| `{리소스_루트}/templates/` | `ui` |
+| `{리소스_루트}/static/` | `ui` |
+| `{앱_루트}/src/test/` | `test` |
+| `{문서_루트}/` | `docs` |
+| `{앱_루트}/build.gradle` | `build` |
 
 **제목 작성 원칙:**
 - 50자 이내, 현재형 동사로 시작 ("추가", "수정", "제거")
@@ -168,12 +168,12 @@ scope 결정 기준 (일반 모드와 동일):
 | `.claude/settings.json` | `config` |
 | `CLAUDE.md` | `claude` |
 | `.gitignore` | `config` |
-| `habit-tracker/src/main/java/` | 변경된 도메인명 (예: `routine`, `check`) |
-| `habit-tracker/src/main/resources/templates/` | `ui` |
-| `habit-tracker/src/main/resources/static/` | `ui` |
-| `habit-tracker/src/test/` | `test` |
-| `habit-tracker/docs/` | `docs` |
-| `habit-tracker/build.gradle` | `build` |
+| `{소스_루트}/` | 변경된 도메인명 (예: `routine`, `check`) |
+| `{리소스_루트}/templates/` | `ui` |
+| `{리소스_루트}/static/` | `ui` |
+| `{앱_루트}/src/test/` | `test` |
+| `{문서_루트}/` | `docs` |
+| `{앱_루트}/build.gradle` | `build` |
 
 ```bash
 git commit -m "$(cat <<'EOF'

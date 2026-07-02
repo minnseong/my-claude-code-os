@@ -29,19 +29,19 @@ tools:
 
 ```bash
 # 1. 디자인 명세의 UX 원칙 확인
-cat habit-tracker/docs/design/specs/[기능명].md 2>/dev/null
+cat {문서_루트}/design/specs/[기능명].md 2>/dev/null
 
 # 2. API 계약서 확인 (유효성 규칙)
-cat habit-tracker/docs/api/endpoints.md
+cat {문서_루트}/api/endpoints.md
 
 # 3. 서비스 로직 분석
-find habit-tracker/src/main/java -name "*Service.java" | xargs grep -n "throw\|if\|Optional\|null" 2>/dev/null
+find {소스_루트} -name "*Service.java" | xargs grep -n "throw\|if\|Optional\|null" 2>/dev/null
 
 # 4. 유효성 검사 누락 확인
-grep -rn "@NotBlank\|@NotNull\|@Size\|@NotEmpty" habit-tracker/src/main/java/ 2>/dev/null
+grep -rn "@NotBlank\|@NotNull\|@Size\|@NotEmpty" {소스_루트}/ 2>/dev/null
 
 # 5. 템플릿의 빈 상태 처리 확인
-grep -n "isEmpty\|empty-state" habit-tracker/src/main/resources/templates/**/*.html 2>/dev/null
+grep -n "isEmpty\|empty-state" {리소스_루트}/templates/**/*.html 2>/dev/null
 ```
 
 ## 테스트 케이스 분류 (반드시 포함)
@@ -54,8 +54,8 @@ grep -n "isEmpty\|empty-state" habit-tracker/src/main/resources/templates/**/*.h
 
 ## 산출물
 
-1. `habit-tracker/docs/qa/test-cases/[기능명].md`
-2. `habit-tracker/docs/qa/bug-reports/[기능명]-bugs.md` (버그 발견 시)
+1. `{문서_루트}/qa/test-cases/[기능명].md`
+2. `{문서_루트}/qa/bug-reports/[기능명]-bugs.md` (버그 발견 시)
 
 ## 완료 시 보고 형식
 

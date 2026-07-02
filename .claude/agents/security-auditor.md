@@ -32,10 +32,10 @@ tools:
 
 ```bash
 # build.gradle에서 버전 고정된 의존성 확인
-cat habit-tracker/build.gradle
+cat {앱_루트}/build.gradle
 
 # Spring Security 설정 유무 확인
-find habit-tracker/src -name "SecurityConfig*.java" 2>/dev/null || echo "SecurityConfig 없음"
+find {앱_루트}/src -name "SecurityConfig*.java" 2>/dev/null || echo "SecurityConfig 없음"
 ```
 
 ### 2. 인증/인가 점검
@@ -43,14 +43,14 @@ find habit-tracker/src -name "SecurityConfig*.java" 2>/dev/null || echo "Securit
 ```bash
 # 컨트롤러 엔드포인트 목록
 grep -rn "@GetMapping\|@PostMapping\|@PutMapping\|@DeleteMapping\|@RequestMapping" \
-  habit-tracker/src/main/java/ --include="*.java"
+  {소스_루트}/ --include="*.java"
 
 # @PreAuthorize, @Secured, @RolesAllowed 사용 여부
 grep -rn "@PreAuthorize\|@Secured\|@RolesAllowed\|hasRole\|hasAuthority" \
-  habit-tracker/src/main/java/ --include="*.java"
+  {소스_루트}/ --include="*.java"
 
 # application.yml에서 security 설정 확인
-grep -A 20 "security:" habit-tracker/src/main/resources/application.yml 2>/dev/null
+grep -A 20 "security:" {리소스_루트}/application.yml 2>/dev/null
 ```
 
 ### 3. SQL Injection / JPA 쿼리 점검
@@ -58,11 +58,11 @@ grep -A 20 "security:" habit-tracker/src/main/resources/application.yml 2>/dev/n
 ```bash
 # 네이티브 쿼리 사용 여부
 grep -rn "@Query\|nativeQuery\|createNativeQuery\|createQuery" \
-  habit-tracker/src/main/java/ --include="*.java"
+  {소스_루트}/ --include="*.java"
 
 # 문자열 연결로 쿼리 조립하는 패턴
 grep -rn "\"SELECT\|\"INSERT\|\"UPDATE\|\"DELETE" \
-  habit-tracker/src/main/java/ --include="*.java"
+  {소스_루트}/ --include="*.java"
 ```
 
 ### 4. XSS 점검 (Thymeleaf)
@@ -70,11 +70,11 @@ grep -rn "\"SELECT\|\"INSERT\|\"UPDATE\|\"DELETE" \
 ```bash
 # th:utext 사용 여부 (th:text는 안전, th:utext는 XSS 위험)
 grep -rn "th:utext\|th:inline\|[(][(]" \
-  habit-tracker/src/main/resources/templates/ --include="*.html"
+  {리소스_루트}/templates/ --include="*.html"
 
 # 사용자 입력이 모델에 그대로 담기는 경우
 grep -rn "model.addAttribute\|ModelAndView\|@ModelAttribute" \
-  habit-tracker/src/main/java/ --include="*.java"
+  {소스_루트}/ --include="*.java"
 ```
 
 ### 5. CSRF / 세션 / CORS 점검
@@ -82,15 +82,15 @@ grep -rn "model.addAttribute\|ModelAndView\|@ModelAttribute" \
 ```bash
 # CSRF 비활성화 여부
 grep -rn "csrf().disable\|csrf(csrf -> csrf.disable\|CsrfConfigurer::disable" \
-  habit-tracker/src/main/java/ --include="*.java"
+  {소스_루트}/ --include="*.java"
 
 # 세션 고정 공격 방지 설정
 grep -rn "sessionFixation\|sessionManagement\|SessionCreationPolicy" \
-  habit-tracker/src/main/java/ --include="*.java"
+  {소스_루트}/ --include="*.java"
 
 # CORS 설정
 grep -rn "@CrossOrigin\|CorsConfiguration\|corsConfigurationSource" \
-  habit-tracker/src/main/java/ --include="*.java"
+  {소스_루트}/ --include="*.java"
 ```
 
 ### 6. 민감 정보 노출 점검
@@ -98,16 +98,16 @@ grep -rn "@CrossOrigin\|CorsConfiguration\|corsConfigurationSource" \
 ```bash
 # 로그에 민감 정보 출력하는 패턴
 grep -rn "log.info\|log.debug\|System.out.print" \
-  habit-tracker/src/main/java/ --include="*.java" | \
+  {소스_루트}/ --include="*.java" | \
   grep -i "password\|token\|secret\|key\|credential"
 
 # application.yml에 하드코딩된 비밀값
 grep -in "password\|secret\|api-key\|token" \
-  habit-tracker/src/main/resources/application.yml
+  {리소스_루트}/application.yml
 
 # 에러 페이지에 스택트레이스 노출
 grep -rn "server.error.include-stacktrace\|error.whitelabel" \
-  habit-tracker/src/main/resources/application.yml
+  {리소스_루트}/application.yml
 ```
 
 ### 7. 입력값 유효성 검증 점검
@@ -115,27 +115,27 @@ grep -rn "server.error.include-stacktrace\|error.whitelabel" \
 ```bash
 # @Valid, @Validated 없이 @RequestBody, @ModelAttribute 받는 컨트롤러
 grep -rn "@RequestBody\|@ModelAttribute" \
-  habit-tracker/src/main/java/ --include="*.java"
+  {소스_루트}/ --include="*.java"
 
 # Bean Validation 어노테이션 사용 현황
 grep -rn "@NotBlank\|@NotNull\|@Size\|@Min\|@Max\|@Pattern" \
-  habit-tracker/src/main/java/ --include="*.java"
+  {소스_루트}/ --include="*.java"
 
 # 파일 업로드 (경로 순회 공격 가능성)
 grep -rn "MultipartFile\|transferTo\|getOriginalFilename" \
-  habit-tracker/src/main/java/ --include="*.java"
+  {소스_루트}/ --include="*.java"
 ```
 
 ### 8. 에러 처리 점검
 
 ```bash
 # 전역 예외 처리기
-find habit-tracker/src -name "*ExceptionHandler*.java" \
+find {앱_루트}/src -name "*ExceptionHandler*.java" \
   -o -name "*ControllerAdvice*.java" 2>/dev/null
 
 # 예외 메시지를 그대로 응답에 담는 패턴
 grep -rn "e.getMessage()\|exception.getMessage()" \
-  habit-tracker/src/main/java/ --include="*.java"
+  {소스_루트}/ --include="*.java"
 ```
 
 ## 취약점 심각도 기준
@@ -149,7 +149,7 @@ grep -rn "e.getMessage()\|exception.getMessage()" \
 
 ## 산출물
 
-`habit-tracker/docs/security/[범위]-security-report.md` 형식으로 저장
+`{문서_루트}/security/[범위]-security-report.md` 형식으로 저장
 
 ```markdown
 # 보안 감사 리포트: [범위]
@@ -188,7 +188,7 @@ grep -rn "e.getMessage()\|exception.getMessage()" \
 ```
 🔒 보안 감사 완료: [범위]
 
-리포트: habit-tracker/docs/security/[범위]-security-report.md
+리포트: {문서_루트}/security/[범위]-security-report.md
 
 CRITICAL: N건  ← 즉시 패치 필요
 HIGH:     N건  ← 이번 스프린트 내 수정

@@ -65,13 +65,13 @@ git diff HEAD~1 --name-only
 
 작업 순서:
 1. 관련 구현 파일 탐색
-   - habit-tracker/src/main/java 에서 관련 도메인/서비스/컨트롤러 찾기
-   - habit-tracker/src/main/resources/templates 에서 관련 화면 찾기
-2. habit-tracker/docs/planning/prd-[기능명].md 가 있으면 수용 기준(AC) 확인
-3. habit-tracker/docs/design/specs/ 에서 UX 체크리스트 확인
+   - {소스_루트} 에서 관련 도메인/서비스/컨트롤러 찾기
+   - {리소스_루트}/templates 에서 관련 화면 찾기
+2. {문서_루트}/planning/prd-[기능명].md 가 있으면 수용 기준(AC) 확인
+3. {문서_루트}/design/specs/ 에서 UX 체크리스트 확인
 4. 코드 정적 분석으로 버그 선제 발굴 (엣지 케이스, 경계값, null, 동시성)
-5. 테스트 케이스 작성 → habit-tracker/docs/qa/test-cases/[기능명].md
-6. 버그 발견 시 버그 리포트 작성 → habit-tracker/docs/qa/bug-reports/[기능명]-bugs.md
+5. 테스트 케이스 작성 → {문서_루트}/qa/test-cases/[기능명].md
+6. 버그 발견 시 버그 리포트 작성 → {문서_루트}/qa/bug-reports/[기능명]-bugs.md
 7. 작업 완료 후 직접 커밋
 ```
 
@@ -87,11 +87,11 @@ git diff HEAD~1 --name-only
 
 작업 순서:
 1. 위 파일들을 읽고 무엇이 구현됐는지 파악
-2. habit-tracker/docs/planning/ 에서 관련 PRD 찾아 수용 기준(AC) 확인
-3. habit-tracker/docs/design/specs/ 에서 UX 체크리스트 확인
+2. {문서_루트}/planning/ 에서 관련 PRD 찾아 수용 기준(AC) 확인
+3. {문서_루트}/design/specs/ 에서 UX 체크리스트 확인
 4. 코드 정적 분석으로 버그 선제 발굴 (엣지 케이스, 경계값, null, 동시성)
-5. 테스트 케이스 작성 → habit-tracker/docs/qa/test-cases/[기능명].md
-6. 버그 발견 시 버그 리포트 작성 → habit-tracker/docs/qa/bug-reports/[기능명]-bugs.md
+5. 테스트 케이스 작성 → {문서_루트}/qa/test-cases/[기능명].md
+6. 버그 발견 시 버그 리포트 작성 → {문서_루트}/qa/bug-reports/[기능명]-bugs.md
 7. 작업 완료 후 직접 커밋
 ```
 

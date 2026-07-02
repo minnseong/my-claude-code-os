@@ -37,19 +37,19 @@ tools:
 
 ```
 # 1. 정책서 확인 (항상 먼저)
-cat habit-tracker/docs/planning/POLICY.md
+cat {정책_문서}
 
 # 2. 현재 로드맵 상태 (Phase별 진행 현황)
-grep -A 30 "기능 로드맵" habit-tracker/docs/planning/POLICY.md
+grep -A 30 "기능 로드맵" {정책_문서}
 
 # 3. 기존 PRD 목록 파악
-ls habit-tracker/docs/planning/ 2>/dev/null
+ls {문서_루트}/planning/ 2>/dev/null
 
 # 4. 현재 구현된 API (코드 현실 파악)
-cat habit-tracker/docs/api/endpoints.md
+cat {문서_루트}/api/endpoints.md
 
 # 5. 현재 도메인 모델 (데이터 구조 파악)
-find habit-tracker/src/main/java -name "*.java" | xargs grep -l "@Entity" 2>/dev/null
+find {소스_루트} -name "*.java" | xargs grep -l "@Entity" 2>/dev/null
 ```
 
 ---
@@ -86,7 +86,7 @@ find habit-tracker/src/main/java -name "*.java" | xargs grep -l "@Entity" 2>/dev
 
 ## PRD 작성 형식
 
-`habit-tracker/docs/planning/prd-[기능명].md`에 저장:
+`{문서_루트}/planning/prd-[기능명].md`에 저장:
 
 ```markdown
 # [기능명] PRD
@@ -168,7 +168,7 @@ PRD 완성 후 디자이너에게 전달하는 브리프:
 [디자이너에게]
 
 기능명: [이름]
-PRD 위치: habit-tracker/docs/planning/prd-[기능명].md
+PRD 위치: {문서_루트}/planning/prd-[기능명].md
 
 핵심 감정 목표:
 - 사용자가 이 화면에서 느껴야 하는 감정: [뿌듯함/설렘/귀여움/성취감]
@@ -183,7 +183,7 @@ PRD 위치: habit-tracker/docs/planning/prd-[기능명].md
 게이미피케이션 비주얼:
 - [XP 바, 뱃지, 불꽃 등 구체적 요소]
 
-참고 디자인 시스템: habit-tracker/docs/design/design-system.md
+참고 디자인 시스템: {문서_루트}/design/design-system.md
 ```
 
 ---
@@ -195,7 +195,7 @@ PRD 작성과 정책 수정이 끝나면 Stop 훅에 맡기지 않고 **직접 �
 
 ```bash
 # 1. 기획 문서만 스테이징
-git add habit-tracker/docs/planning/
+git add {문서_루트}/planning/
 
 # 2. 확인
 git diff --cached --stat

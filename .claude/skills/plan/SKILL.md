@@ -42,9 +42,9 @@ Agent 도구로 `planner` 에이전트를 실행한다.
 기획 요소: {사용자가 전달한 내용}
 
 작업 순서:
-1. habit-tracker/docs/planning/POLICY.md 를 읽고 이 기획 요소가 현재 정책과 어떻게 연결되는지 파악해
+1. {정책_문서} 를 읽고 이 기획 요소가 현재 정책과 어떻게 연결되는지 파악해
 2. 정책 추가/수정이 필요하면 POLICY.md를 직접 수정하고 변경 이력을 기록해
-3. habit-tracker/docs/planning/prd-[기능명].md 형식으로 PRD를 작성해
+3. {문서_루트}/planning/prd-[기능명].md 형식으로 PRD를 작성해
 4. PRD 완성 후, 아래 두 가지를 명확하게 출력해:
    a. [디자이너 지시] — 디자이너 에이전트에게 전달할 디자인 브리프 (전체 내용)
    b. [개발자 지시] — 백엔드/프론트 에이전트에게 전달할 작업 목록 (전체 내용)
@@ -57,10 +57,10 @@ Agent 도구로 `planner` 에이전트를 실행한다.
 현재 앱 정책과 로드맵을 검토하고, 다음에 추가하면 좋을 기능을 스스로 골라서 기획해줘.
 
 작업 순서:
-1. habit-tracker/docs/planning/POLICY.md 를 읽고 Phase별 로드맵 현황을 파악해
-2. habit-tracker/docs/api/endpoints.md 와 구현 파일들을 확인해서 현재 코드 상태를 파악해
+1. {정책_문서} 를 읽고 Phase별 로드맵 현황을 파악해
+2. {문서_루트}/api/endpoints.md 와 구현 파일들을 확인해서 현재 코드 상태를 파악해
 3. 로드맵 우선순위와 게이미피케이션 가치를 기준으로 지금 추가할 기능 1개를 선택해
-4. 선택 이유를 한 문장으로 설명한 뒤, 해당 기능의 PRD를 habit-tracker/docs/planning/prd-[기능명].md 로 작성해
+4. 선택 이유를 한 문장으로 설명한 뒤, 해당 기능의 PRD를 {문서_루트}/planning/prd-[기능명].md 로 작성해
 5. PRD 완성 후, 아래 두 가지를 명확하게 출력해:
    a. [디자이너 지시] — 디자이너 에이전트에게 전달할 디자인 브리프 (전체 내용)
    b. [개발자 지시] — 백엔드/프론트 에이전트에게 전달할 작업 목록 (전체 내용)
@@ -124,7 +124,7 @@ TDD 원칙에 따라 테스트 먼저 작성하고, 완료 후 보고해줘.
 {[개발자 지시] 블록 중 Frontend 관련 내용}
 
 디자인 명세서: {Step 3에서 나온 파일 경로}
-API 계약서: habit-tracker/docs/api/endpoints.md
+API 계약서: {문서_루트}/api/endpoints.md
 
 완료 후 변경된 템플릿 파일 경로와 주요 인터랙션을 보고해줘.
 ```
@@ -145,11 +145,11 @@ API 계약서: habit-tracker/docs/api/endpoints.md
 
 작업 순서:
 1. 관련 구현 파일 탐색 (백엔드·프론트 에이전트가 커밋한 파일 기준)
-2. habit-tracker/docs/planning/prd-[기능명].md 의 수용 기준(AC) 확인
-3. habit-tracker/docs/design/specs/ 의 UX 체크리스트 확인
+2. {문서_루트}/planning/prd-[기능명].md 의 수용 기준(AC) 확인
+3. {문서_루트}/design/specs/ 의 UX 체크리스트 확인
 4. 코드 정적 분석으로 버그 선제 발굴 (엣지 케이스, 경계값, null, 동시성)
-5. 테스트 케이스 작성 → habit-tracker/docs/qa/test-cases/[기능명].md
-6. 버그 발견 시 버그 리포트 작성 → habit-tracker/docs/qa/bug-reports/[기능명]-bugs.md
+5. 테스트 케이스 작성 → {문서_루트}/qa/test-cases/[기능명].md
+6. 버그 발견 시 버그 리포트 작성 → {문서_루트}/qa/bug-reports/[기능명]-bugs.md
 7. 작업 완료 후 직접 커밋
 ```
 
@@ -167,7 +167,7 @@ API 계약서: habit-tracker/docs/api/endpoints.md
 ─────────────────────────────
 📋 기획자
 ─────────────────────────────
-PRD: habit-tracker/docs/planning/prd-[기능명].md
+PRD: {문서_루트}/planning/prd-[기능명].md
 정책 변경: [POLICY.md #섹션 수정 / 변경 없음]
 
 ─────────────────────────────

@@ -37,7 +37,7 @@ description: |
 작업 순서:
 1. 점검 범위에 해당하는 파일을 탐색
 2. OWASP Top 10 기준으로 취약점을 분석
-3. habit-tracker/docs/security/[범위]-security-report.md 로 리포트 작성
+3. {문서_루트}/security/[범위]-security-report.md 로 리포트 작성
 4. 완료 보고: CRITICAL/HIGH/MEDIUM/LOW 건수 + Backend/Frontend 분류
 ```
 
@@ -58,7 +58,7 @@ security-auditor 보고에서 아래를 추출한다:
 ```
 보안 감사 결과 아래 취약점이 발견됐어. 수정해줘.
 
-리포트: habit-tracker/docs/security/[범위]-security-report.md
+리포트: {문서_루트}/security/[범위]-security-report.md
 
 수정 대상 (Backend):
 {Step 2에서 추출한 Backend 취약점 목록 — VUL 번호, 파일경로, 수정 방향 포함}
@@ -77,7 +77,7 @@ security-auditor 보고에서 아래를 추출한다:
 ```
 보안 감사 결과 아래 취약점이 발견됐어. 수정해줘.
 
-리포트: habit-tracker/docs/security/[범위]-security-report.md
+리포트: {문서_루트}/security/[범위]-security-report.md
 
 수정 대상 (Frontend):
 {Step 2에서 추출한 Frontend 취약점 목록 — VUL 번호, 파일경로, 수정 방향 포함}
@@ -98,7 +98,7 @@ security-auditor 보고에서 아래를 추출한다:
 ─────────────────────────────
 🔒 보안 감사 결과
 ─────────────────────────────
-리포트: habit-tracker/docs/security/[범위]-security-report.md
+리포트: {문서_루트}/security/[범위]-security-report.md
 CRITICAL: N건 | HIGH: N건 | MEDIUM: N건 | LOW: N건
 
 ─────────────────────────────
