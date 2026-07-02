@@ -48,7 +48,8 @@ my-claude-code-os/
 
 | 스킬 | 호출 방법 | 설명 |
 |------|-----------|------|
-| `/interview` | `/interview [요청]` 또는 인자 없이 | 모호한 요청을 질문으로 구체화 — 확정 전까지 구현하지 않음 |
+| `/interview` | `/interview [요청]` 또는 인자 없이 | 분해 → 충돌감지 → 5라운드 인터뷰 → 요구사항 확정 → 로그 저장 |
+| `/interview-analyze` | `/interview-analyze` | 인터뷰 로그 분석 → 모호함 패턴 도출 → `/interview` 스킬 개선안 제안 |
 | `/plan` | `/plan [기획 요소]` 또는 인자 없이 | planner → designer → backend+frontend → qa-engineer 자동 파이프라인 |
 | `/qa` | `/qa [기능명]` 또는 인자 없이 | qa-engineer 독립 실행, 테스트 케이스 + 버그 리포트 |
 | `/security` | `/security [범위]` 또는 인자 없이 | security-auditor 점검 → 취약점 수정 지시까지 자동화 |
