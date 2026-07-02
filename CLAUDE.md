@@ -14,7 +14,9 @@
 | 변수 | 현재 값 |
 |------|--------|
 | `{앱_루트}` | `habit-tracker` |
-| `{정책_문서}` | `habit-tracker/docs/planning/POLICY.md` |
+| `{정책_문서}` | `habit-tracker/docs/planning/POLICY.md` (공통 정책 — 항상 읽는다) |
+| `{습관_정책}` | `habit-tracker/docs/planning/HABIT_POLICY.md` (루틴·체크·히스토리·통계) |
+| `{게이미피케이션_정책}` | `habit-tracker/docs/planning/GAMIFICATION_POLICY.md` (XP·레벨·스트릭·뱃지·미션) |
 | `{소스_루트}` | `habit-tracker/src/main/java` |
 | `{리소스_루트}` | `habit-tracker/src/main/resources` |
 | `{문서_루트}` | `habit-tracker/docs` |
@@ -71,4 +73,4 @@
 - **에이전트 자체 커밋**: 각 에이전트가 작업 완료 후 직접 커밋 (`auto-commit.sh`는 안전망)
 - **문서 우선**: PRD → 화면 명세서 → API 계약서 → 구현
 - **qa-engineer·security-auditor는 코드 수정 안 함**: 발견만, 수정은 개발자 담당
-- **정책 문서**: `{정책_문서}` — 모든 기능 추가·변경 전 planner가 먼저 읽는다
+- **정책 문서 읽기 규칙**: 항상 `{정책_문서}` 먼저, 루틴 기능이면 `{습관_정책}` 추가, 게이미피케이션이면 `{게이미피케이션_정책}` 추가
